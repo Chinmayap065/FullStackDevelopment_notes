@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>forms</title>
+</head>
+<body>
+    <form>
+        <label for="firstname">Firstname</label>
+        <input type="text" name="firstname" required>
+        <br><br>
+        <label for="lastname">Lastname</label>
+        <input type="text" name="lastname" required>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+        <br><br>
+        <label for="sex">sex:</label>
+        <label for="sex">male</label>
+        <input type="radio" id="male" name="sex" value="male">
+        <label for="sex">female</label>
+        <input type="radio" id="female" name="sex" value="female">
+        <br><br>
+        <label for="country">Select a Country:</label>
+        <select name="country" id="country">
+            <option value="select option">Select a option</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="Austin">Austin</option>
+        </select>
+        <br><br>
+        <label for="hobbies">hobbies</label>
+        <input type="checkbox" id="cricket" name="hobbies" value="cricket">cricket
+        <br><br>
+        <label for="address">Address</label><br>
+        <textarea name="address" id="address" cols="30" rows="4"></textarea>
+        <br><br>
+        <label for="file">Chose a file:</label>
+        <input type="file" id="file" name="myfile" required>
+        <br><br>
+        <label for="image">Uplaod an image:</label>
+        <input type="file" id="image" name="myfile" accept="image/*" required>
+        <br><br>
+        <label for="docs">Upload a document:</label>
+        <input type="file" id="docs" name="myfile" accept=".pdf,.doc,.docx,.txt" required>
+        <br><br>
+        <label for="multi">Upload multiple images</label>
+        <input type="file" id="multi" name="myfiles[]" accept="image/*" multiple required>
+        <br><br>
+        <label for="pdf">Uplaod pdf images only:</label>
+        <input type="file" id="pdf" name="myfile" accept=".pdf" required>
+        <br><br>
+        <label for="multipdf">multiple pdf req:</label>
+        <input type="file" id="multipdf" name="myfiles[]" accept=".pdf" multiple required>
+        <br><br>
+        <input type="submit" value="login!">
+        
+    </form>
+</body>
+</html>
