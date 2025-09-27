@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let student=[
+            {name:"Alice",marks:85},
+            {name:"Bob",marks:92},
+            {name:"Charlie",marks:78},
+            {name:"David",marks:90}
+
+        ];
+
+        let studentsWithCGPA=student.map(s=>{
+            return {
+                name: s.name,
+                cgpa: (s.marks/10).toFixed(2)
+            };
+        });
+
+        let topStudents=studentsWithCGPA.filter(s=>s.cgpa>=9);
+        let totalTopStudents=topStudents.reduce((count, s) => count + 1, 0);
+        document.write("<h3>Students with CGPA >= 9 </h3>");
+        topStudents.forEach(s => {
+            document.write("Name:"+s.name+",CGPA:"+s.cgpa + "<br>");
+            
+        });
+        
+        document.write("<h3>Total count:"+totalTopStudents+"</h3>");
+    </script>
+    
+</body>
+</html>

@@ -36,6 +36,6 @@ console.log("after adding nested address:",person);
 
 console.log("nested address:",person.address);
 console.log("nested city:",person.address.city);
-console.group("zipcode:",person["adderess"]["pincode"]);
+//console.group("zipcode:",person["adderess"]["pincode"]);
 
 

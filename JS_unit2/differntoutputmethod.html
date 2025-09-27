@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>
+        This is java program
+    </h2>
+    <p id="innerHTMLDemo">hello world</p>
+    <p id="promptDemo">xyz</p>
+    <p id="confirmDemo">fw</p>
+    <script>
+        console.log("This is conole display");
+        alert("this is alert");
+        document.write("This is browser output");
+        document.getElementById("innerHTMLDemo").innerhtml="This text displayed using inner html";
+        let name=prompt("Enter your name");
+        document.getElementById("PromptDemo").innerHTML="welcome,"+ name + "!";
+        console.warn("This is a warning message in console");
+        console.error("This is an error message in console");
+        let result = confirm("Do you want continue?");
+        document.getElementById("confirmDemo").innerHtml="user cohice confirm()"+result;
+
+    </script>
+</body>
+</html>

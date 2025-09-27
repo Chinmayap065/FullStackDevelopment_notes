@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let randomNumber=Math.floor(Math.random() * 100)+1;
+        let guess;
+        let attempts=0;
+        do{
+            guess=parseInt(prompt("Guess a number between 1 and 100:"));
+            attempts++;
+            if (guess > randomNumber) {
+                alert("Too high! Try again.");
+            } else if (guess < randomNumber) {
+                alert("Too low! Try again.");
+            }
+        } while (guess !== randomNumber);
+
+        alert(`Congratulations! You guessed the number in ${attempts} attempts.`);
+        let playAgain = confirm("Do you want to play again?");
+        if (playAgain) {
+            location.reload();
+        }
+
+
+    </script>
+</body>
+</html>
