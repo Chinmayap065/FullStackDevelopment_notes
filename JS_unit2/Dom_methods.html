@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DOM Methods Demo</title>
+</head>
+<body>
+  <h1 id="mainHeading">Welcome Students!</h1>
+
+  <p class="text">This is the first paragraph with class 'text'.</p>
+  <p class="text">This is the second paragraph with class 'text'.</p>
+
+  <h2>Sub heading One</h2>
+  <h2>Sub heading Two</h2>
+
+  <ul>
+    <li>Apple</li>
+    <li>Bannana</li>
+    <li>Cherry</li>
+  </ul>
+
+  <button onclick="demoAccess()">DOM Demo</button>
+
+  <script>
+    function demoAccess() {
+      // 1. getElementById
+      const heading = document.getElementById("mainHeading");
+      if (heading) heading.style.color = "red";
+
+      // 2. getElementsByClassName
+      const paragraphs = document.getElementsByClassName("text");
+      if (paragraphs.length >= 2) {
+        paragraphs[0].style.fontWeight = "bold";
+        paragraphs[1].style.color = "blue";
+      }
+
+      // 3. getElementsByTagName
+      const headings = document.getElementsByTagName("h2");
+      if (headings.length >= 2) {
+        headings[0].style.background = "yellow";
+        headings[1].style.fontStyle = "italic";
+      }
+
+      // 4. querySelector
+      const firstPara = document.querySelector(".text");
+      if (firstPara) {
+        firstPara.style.backgroundColor = "lightgreen";
+      }
+
+      // 5. querySelectorAll
+      const items = document.querySelectorAll("ul li");
+      items.forEach(item => {
+        item.style.textTransform = "uppercase";
+      });
+    }
+  </script>
+</body>
+</html>

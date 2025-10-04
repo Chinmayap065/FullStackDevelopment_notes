@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="header">This is header.</h2>
+    <p id="paragraph">this is paragraph.</p>
+    <button id="button" onclick="changeContent()">changeContent</button>
+    <script>
+        //Accessing the elements usin their IDs
+        const header = document.getElementById("header");
+        const paragraph = document.getElementById("paragraph");
+        const button=document.getElementById("ChangeTextButton");
+        //Function to change the content of the elements
+        function changeContent(){
+            header.textContent="Welcome to DOM Manipulation";
+            paragraph.textContent="You have successfully changed the text";
+
+        }
+        button.addEventListener('click',changeContent);
+    </script>
+</body>
+</html>
