@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function handlefocus() {
+            document.getElementById("msg").innerHTML = "Password field is active(handle focus event)";
+            document.getElementById("pwd").style.border = "2px solid #007bff";
+        }
+        function handleBlur() {
+            document.getElementById("msg").innerHTML = "Password field is inactive(handle blur event)";
+            document.getElementById("pwd").style.border = "2px solid #dc3545";
+        }
+        function handleInput() {
+            let pwd = document.getElementById("pwd").value;
+            let msg=document.getElementById("msg");
+            
+            if (pwd.length === 0) {
+            msg.innerHTML="Start typing your password(oninput event)";
+            msg.style.color="#616161";
+            } else if (pwd.length < 6) {
+            msg.innerHTML="Weak password(oninput event)";
+            msg.style.color="red";
+            } else if (pwd.length < 10) {
+            msg.innerHTML="Moderate strength password(oninput event)";
+            msg.style.color="orange";
+            } else {
+            msg.innerHTML="Strong password(oninput event)";
+            msg.style.color="green";
+            }
+            
+        }
+        function handleKeyUp() {
+            document.getElementById("msg").innerHTML = "Key released in password field(handlekey up event)";
+            document.getElementById("pwd").style.color = "blue";
+        }
+        </script>
+</head>
+<body>
+    <h2>Handling events from a password Field</h2>
+
+    <label for="pwd">Enter your password</label>
+    <input type="text" id="pwd"
+    onfocus="handlefocus()"
+    onblur="handleBlur()"
+    oninput="handleInput()"
+    onkeyup="handleKeyUp()"
+    >
+    <p id="msg">Perform an action on the password field to see the event response.</p>
+    
+</body>
+</html>
