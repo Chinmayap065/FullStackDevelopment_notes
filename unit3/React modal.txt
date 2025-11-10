@@ -1,0 +1,55 @@
+React modal 
+modal.js
+import ReactDom from 'react-dom';
+function Modal({ children }) {
+  return ReactDom.createPortal(
+    <div >
+        <h2>Inside the Modal component</h2>
+      {children}
+    </div>,
+    document.getElementById('portal-root')
+  );
+}
+export default Modal;
+
+app.js
+
+//import Timer from './timer';
+//import React from "react";
+//import ErrorBoundary from "./ErrorBoundary";
+//import DivisionComponent from "./DivisionComponent";
+//import ArrayComponent from "./ArrayComponent";
+// import DepartmentList from "./DepartmentList";
+import Modal from "./Modal";
+import React from "react";
+function App() {
+  
+    
+      // <div >
+      //   <DepartmentList />
+      // </div>
+       const [show,setShow]=React.useState(false);
+       return(
+        <div>
+          <h2>React Portal Example</h2>
+          <button onClick={()=>setShow(true)}>open Modal</button>
+          {show && (
+            <Modal>
+              <h3>This is a portal Modal!</h3>
+              <button onClick={()=>setShow(false)}>Close Modal</button>
+            </Modal>
+          )}
+        </div>
+       );
+      
+
+      
+      
+
+
+    
+    
+  
+}
+
+export default App;

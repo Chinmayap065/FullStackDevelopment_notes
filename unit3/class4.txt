@@ -1,0 +1,54 @@
+import React, { Component } from "react";
+
+class LifeCycleDemo extends Component {
+  constructor(props) {
+    super(props);
+    console.log("M1. Constructor: Component is being created");
+    this.state = {
+      message: "Hello, World",
+    };
+  }
+
+  static getDerivedStateFromProps(nextProps, nextState) {
+    console.log("M2. getDerivedStateFromProps: Component receives new props");
+    return null;
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("UP2. shouldComponentUpdate: Decides if the component should update");
+    return true;
+  }
+
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log("UP4. getSnapshotBeforeUpdate: Captures some information before update");
+    return null;
+  }
+
+  componentDidMount() {
+    console.log("3. componentDidMount: Component added to DOM");
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log("UP5. componentDidUpdate: Component updated");
+  }
+
+  componentWillUnmount() {
+    console.log("5. componentWillUnmount: Component will be removed");
+  }
+
+  handleChangeMessage = () => {
+    this.setState({ message: "Message has been updated!" });
+  };
+
+  render() {
+    console.log("2. render: Component is rendering");
+    return (
+      <div>
+        <h2>{this.state.message}</h2>
+        <button onClick={this.handleChangeMessage}>Change Message</button>
+      </div>
+    );
+  }
+}
+
+export default LifeCycleDemo;

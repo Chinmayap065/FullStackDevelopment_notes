@@ -1,0 +1,108 @@
+errorhandling
+1.Errorbound.js
+import React from "react";
+class ErrorBoundary extends React.Component {
+    constructor(props){
+        super(props);
+        this.state={ hasError:false};
+    }
+    static getDerivedStateFromError(error){
+    return { hasError:true };
+}
+    componentDidCatch(error,info){
+        console.log("Error caught by Error Boundary:",error);
+    }
+    render(){
+        if(this.state.hasError){
+            return <h2 style={{color:"red"}}>Something went wrong.</h2>;
+        }
+        return this.props.children;
+    }
+}
+export default ErrorBoundary;
+2.DivisionComponent.js
+import React from "react";
+function DivisionComponent({a,b}){
+    if(b===0){
+        throw new Error("Division by zero is not allowed.");
+    }
+    const result=a/b;
+    return(
+        <div style={{textAlign:"center"}}>
+            <h3>Division Result:{result}</h3>
+        </div>
+    );
+}
+export default DivisionComponent
+3.ArrayComponent.js
+import React from "react";
+function ArrayComponent(){
+    const arr=[10,20,30];
+    const index=1;
+    if (index >=arr.length){
+        throw new Error("Index out of bounds");
+    }
+    return(
+        <div style={{textAlign:"center"}}>
+            <h3>Element at index {index}: {arr[index]}</h3>
+        </div>
+    );
+}
+export default ArrayComponent;
+3.App.js
+
+//import Timer from './timer';
+import React from "react";
+import ErrorBoundary from "./ErrorBoundary";
+import DivisionComponent from "./DivisionComponent";
+import ArrayComponent from "./ArrayComponent";
+function App() {
+  return (
+    
+      <div style={{textAlign:"center",marginTop:"40xp"}}>
+        <h2>React boundadry example</h2>
+        <ErrorBoundary>
+          <h3>Division by zero </h3>
+          <DivisionComponent a={10} b={2} />
+        </ErrorBoundary>
+        <hr />
+        <ErrorBoundary>
+          <h3>Array index out of bounds</h3>
+          <ArrayComponent />
+        </ErrorBoundary>
+
+      </div>
+       
+      
+
+      
+      
+
+
+    
+    
+  );
+}
+
+export default App;
+
+
+
+
+Department list program
+1.DepartmentList.js
+import React from "react";
+function DepartmentList(){
+    const departments=["cse",'ise',"ece","mech"];
+    return(
+        <div>
+            <h2>Department List</h2>
+            <ul>
+                {departments.map((dept,index)=>(
+                    <li key={index}>{dept}</li>
+                ))}
+            </ul>
+        </div>
+    );
+}
+export default DepartmentList;

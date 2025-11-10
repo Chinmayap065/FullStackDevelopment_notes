@@ -1,0 +1,61 @@
+Creating compnents in react
+app.js
+import Welcome from './Welcome';
+
+function App() {
+  return (
+    <Welcome />
+  );
+}
+
+export default App;
+
+Welcome.js
+function Welcome(){
+    return(
+        <div>
+            <h1>Welcome to React</h1>
+        </div>
+    );
+}
+
+export default Welcome;
+
+Passing props to the component
+
+Welcome.js
+function Welcome(props){
+    return(
+        <div>
+            <h1>Welcome to React</h1>
+            <h2>Student details</h2>
+            <p>Name:{props.name}</p>
+            <p>Age:{props.age}</p>
+
+        </div>
+    );
+}
+
+export default Welcome;
+
+app.js
+import Welcome from './Welcome';
+import Header from './Header';
+import Footer from './Footer';
+
+
+function App() {
+  return (
+    <div>
+      <Welcome name="chinmaya" age="20"/>
+      <Header />
+      <footer />
+
+    </div>
+    
+  );
+}
+
+export default App;
+
+

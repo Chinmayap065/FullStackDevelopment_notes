@@ -1,0 +1,80 @@
+1.
+Welcome.js
+import React ,{ Component } from "react";
+class Welcome extends Component{
+    render(){
+        return <h2>Welcome to react class component!</h2>;
+    }
+}
+
+export default Welcome;
+App.js
+import React from 'react';
+
+
+function App() {
+  return (
+    <div>
+      {/* <Welcome name="chinmaya" age="20"/>
+      <Header />
+      <footer /> */}
+      <Welcome />
+
+
+    </div>
+    
+  );
+}
+
+export default App;
+2.passing through props
+Welcome.js
+import React ,{ Component } from "react";
+class Welcome extends Component{
+    render(){
+        return <h2>Welcome to react class {this.props.name} component!</h2>;
+    }
+}
+
+export default Welcome;
+App.js
+import React from 'react';
+
+
+function App() {
+  return (
+    <div>
+       <Welcome name="chinmaya"/>
+      
+      
+
+
+    </div>
+    
+  );
+}
+
+export default App;
+3.counter
+Counter.js
+import React, {Component} from "react";
+class Counter extends Component{
+    constructor(){
+        super();
+        this.state={
+            count : 0
+        };
+    }
+    increment=()=>{
+        this.setState({count:this.state.count + 1});
+    };
+    render(){
+        return(
+            <div>
+                <h2>Count:{this.state.count}</h2>
+                <button onClick={this.increment}>Increment</button>
+            </div>
+        );
+    }
+}
+export default Counter;
