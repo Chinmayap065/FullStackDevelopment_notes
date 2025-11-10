@@ -1,0 +1,54 @@
+lifecyle
+import React, { Component } from "react";
+
+class LifeCycleDemo extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { count: 0 };
+        console.log("1. Constructor: Component is being created");
+    }
+
+    componentDidMount() {
+        console.log("3. componentDidMount: Component added to DOM");
+    }
+
+    componentDidUpdate() {
+        console.log("4. componentDidUpdate: Component updated");
+    }
+
+    componentWillUnmount() {
+        console.log("5. componentWillUnmount: Component will be removed");
+    }
+
+    render() {
+        console.log("2. render: Component is rendering");
+        return (
+            <div>
+                <h2>React lifecycle demo</h2>
+                <p>Count: {this.state.count}</p>
+                {/* ✅ Fixed typo: 'coount' → 'count' */}
+                <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+                    Update Count
+                </button>
+            </div>
+        );
+    }
+}
+
+export default LifeCycleDemo;
+
+timer.js
+import { useState,useEffect } from "react";
+function Timer() {
+    const[count,setCount]=useState(0);
+    useEffect(()=>{
+        console.log("Component rendered or updated");
+    },[count]);
+    return(
+        <div>
+            <h2>Timer: {count} seconds</h2>
+            <button onClick={()=>setCount(count+1)}>Increase Timer</button>
+        </div>
+    );
+}
+export default Timer;

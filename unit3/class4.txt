@@ -52,3 +52,54 @@ class LifeCycleDemo extends Component {
 }
 
 export default LifeCycleDemo;
+
+
+timer/count
+1.timer.js
+import { useState,useEffect } from "react";
+function Timer() {
+    const[count,setCount]=useState(0);
+    useEffect(()=>{
+        console.log("Component rendered or updated");
+    },[count]);
+    return(
+        <div>
+            <h2>Timer: {count} seconds</h2>
+            <button onClick={()=>setCount(count+1)}>Increase Timer</button>
+        </div>
+    );
+}
+export default Timer;
+
+
+
+link and nav
+3 diff js pages have been created and the main app.js so 
+
+
+import { Routes,Route,Link } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
+import Contact from "./Contact";
+import React from "react";
+
+function App() {
+  return (
+    <div>
+      <h1>Student portal</h1>
+      <nav>
+        <Link to="/">Home</Link> |{" "}
+        <Link to="/about">About</Link> |{" "}
+        <Link to="/contact">Contact</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </div>
+  );  
+  
+}
+
+export default App;

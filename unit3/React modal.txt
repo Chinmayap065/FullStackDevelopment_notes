@@ -14,12 +14,7 @@ export default Modal;
 
 app.js
 
-//import Timer from './timer';
-//import React from "react";
-//import ErrorBoundary from "./ErrorBoundary";
-//import DivisionComponent from "./DivisionComponent";
-//import ArrayComponent from "./ArrayComponent";
-// import DepartmentList from "./DepartmentList";
+
 import Modal from "./Modal";
 import React from "react";
 function App() {
@@ -40,16 +35,7 @@ function App() {
             </Modal>
           )}
         </div>
-       );
-      
-
-      
-      
-
-
-    
-    
-  
+       );  
 }
 
 export default App;
