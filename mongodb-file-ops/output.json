@@ -1,0 +1,21 @@
+[
+  {
+    "_id": "6936732b5816ecfee2e54b5b",
+    "id": 1,
+    "name": "Alice",
+    "age": 30,
+    "status": "updated"
+  },
+  {
+    "_id": "6936732b5816ecfee2e54b5c",
+    "id": 2,
+    "name": "Bob",
+    "age": 25
+  },
+  {
+    "_id": "6936732b5816ecfee2e54b5d",
+    "id": 3,
+    "name": "Charlie",
+    "age": 35
+  }
+]
